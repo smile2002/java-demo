@@ -1,9 +1,14 @@
-package cn.smile.thread;
+package cn.smile.j1.lang.thread;
 
 import java.util.ArrayList;
 import java.util.concurrent.*;
 
 
+/**
+ * 线程池：ThreadPoolExecutor
+ * 线程安全队列：BlockingQueue
+ * 异步任务：FutureTask
+ */
 public class FutureTask {
     public static void main( String[] args )
     {

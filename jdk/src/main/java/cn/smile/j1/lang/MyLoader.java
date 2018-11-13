@@ -1,4 +1,4 @@
-package cn.smile.lang;
+package cn.smile.j1.lang;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -28,7 +28,7 @@ public class MyLoader {
             }
         };
 
-        Class<?> clazz = myLoader.loadClass("cn.smile.lang.MyLoader");
+        Class<?> clazz = myLoader.loadClass("MyLoader");
         Object obj = clazz.newInstance();
         System.out.println("object class : " + obj.getClass());
         System.out.println("object ClassLoader : " + obj.getClass().getClassLoader());

@@ -1,4 +1,4 @@
-package cn.smile.lang;
+package cn.smile.j1.lang;
 
 import java.io.PrintStream;
 import java.util.Properties;
@@ -12,10 +12,10 @@ public class SysProps {
 
         /**
          *
-         sun.java.command = com.intellij.rt.execution.application.AppMain cn.smile.lang.SysProps
+         sun.java.command = com.intellij.rt.execution.application.AppMain SysProps
          sun.java.launcher = SUN_STANDARD
-         sun.boot.class.path = 启动jar包（如rt.jar等，绝对路径）
-         sun.boot.library.path = C:\Program Files\Java\jdk1.8.0_161\jre\bin
+         sun.boot.class.j5nio = 启动jar包（如rt.jar等，绝对路径）
+         sun.boot.library.j5nio = C:\Program Files\Java\jdk1.8.0_161\jre\bin
          sun.arch.data.model = 64
          sun.cpu.isalist = amd64
          sun.cpu.endian = little
@@ -24,9 +24,9 @@ public class SysProps {
          java.home = C:\Program Files\Java\jdk1.8.0_161\jre
          java.class.version = 52.0
          java.ext.dirs = 扩展类路径
-         java.class.path = (CLASSPATH)
+         java.class.j5nio = (CLASSPATH)
          java.io.tmpdir = C:\Users\Smile\AppData\Local\Temp\
-         java.library.path =
+         java.library.j5nio =
          java.runtime.name / version
          java.specification.name / vendor / version
          java.vendor = Oracle Corporation
@@ -40,7 +40,7 @@ public class SysProps {
          os.name = Windows 10
          os.version = 10.0
          line.separator = (\n)
-         path.separator = ;
+         j5nio.separator = ;
 
          user.country = CN
          user.dir = D:\IDEAProjects\java-demo

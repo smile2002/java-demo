@@ -1,19 +1,20 @@
-package cn.smile.datetime;
+package cn.smile.j3.util;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 
 public class DateTime {
     public static void main(String[] args) {
 
-        /** Date **/
+        /** Date，内部调用了System.currentTimeMillis()，精确到毫秒 **/
         Date date1 = new Date();
 
         DateFormat df1 = DateFormat.getDateTimeInstance();
         System.out.println("getDateTimeInstance : " + df1.format(date1));
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss SSS");
         System.out.println("format(Date)        : " + sdf.format(date1));
 
         /** long **/
@@ -30,7 +31,7 @@ public class DateTime {
 
 
         /** 解析日期时间字符串 **/
-        String time = "1983-06-01 12:34:56";
+        String time = "1983-06-01 12:34:56 888";
         try {
             Date oldDate = sdf.parse(time);
             long oldTime = oldDate.getTime();
@@ -38,5 +39,12 @@ public class DateTime {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
+        /** Calendar **/
+        Calendar cal = Calendar.getInstance();
+        int dayOfYear = cal.get(Calendar.DAY_OF_YEAR);
+        System.out.println(dayOfYear);
+
     }
 }

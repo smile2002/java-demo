@@ -1,4 +1,4 @@
-package cn.smile.path;
+package cn.smile.j5.nio;
 
 import java.io.File;
 import java.nio.file.Path;
@@ -25,6 +25,9 @@ public class PathOp {
         File file2 = path.resolveSibling("brother\\bin").toFile();
         System.out.println("file1.exists = " + file1.exists());
         System.out.println("file2.exists = " + file2.exists());
+
+        File file = path.toFile();
+        System.out.println(file.isDirectory());
 
     }
 }

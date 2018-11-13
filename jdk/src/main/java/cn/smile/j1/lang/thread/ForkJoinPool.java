@@ -1,11 +1,11 @@
-package cn.smile.thread;
+package cn.smile.j1.lang.thread;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.RecursiveAction;
 
 /**
- * Created by Smile on 2018/7/25.
+ * ForkJoinPool
  */
 public class ForkJoinPool {
     public static void main( String[] args )
