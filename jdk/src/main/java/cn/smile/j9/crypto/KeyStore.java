@@ -1,4 +1,4 @@
-package cn.smile.crypto;
+package cn.smile.j9.crypto;
 
 import java.io.FileInputStream;
 import java.net.URL;

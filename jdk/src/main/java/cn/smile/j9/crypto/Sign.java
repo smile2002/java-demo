@@ -1,4 +1,4 @@
-package cn.smile.crypto;
+package cn.smile.j9.crypto;
 
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.binary.Hex;

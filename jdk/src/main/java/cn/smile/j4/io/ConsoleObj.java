@@ -7,7 +7,7 @@ import java.io.Console;
  */
 public class ConsoleObj {
     public static void main(String arg[]) {
-        System.
+
         Console console = System.console();
         if (console != null) {
             console.printf("Hello Console!!");

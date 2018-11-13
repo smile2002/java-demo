@@ -19,5 +19,11 @@ public class Base64Util {
         }catch(Exception e) {
             e.printStackTrace();
         }
+
+
+        /** JDK 自带 **/
+        String str2 = java.util.Base64.getEncoder().encodeToString("Hello Base64!".getBytes());
+        System.out.println("encoded-2: " + str2);
+
     }
 }
