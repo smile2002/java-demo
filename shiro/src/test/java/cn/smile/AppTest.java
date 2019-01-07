@@ -1,4 +1,4 @@
-package cn.xiao;
+package cn.smile;
 
 import static org.junit.Assert.assertTrue;
 
