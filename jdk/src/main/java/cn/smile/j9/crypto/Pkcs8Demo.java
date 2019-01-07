@@ -19,7 +19,8 @@ public class Pkcs8Demo {
 
         try {
             System.out.println("Hello World!");
-            FileInputStream fis = new FileInputStream("D:\\IDEAProjects\\java-demo\\jdk\\src\\main\\resources\\pkcs8_pri.key");
+            //FileInputStream fis = new FileInputStream("D:\\IDEAProjects\\java-demo\\jdk\\src\\main\\resources\\pkcs8_pri.key");
+            FileInputStream fis = new FileInputStream("pkcs8_pri.key");
 
             byte[] buffer = new byte[fis.available()];
             fis.read(buffer);

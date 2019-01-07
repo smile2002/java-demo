@@ -12,6 +12,8 @@
     <module>crypto</module>
     <module>jdk</module>
       <module>log4j</module>
+      <module>magpie</module>
+      <module>netty</module>
   </modules>
 
   <name>java-demo</name>
