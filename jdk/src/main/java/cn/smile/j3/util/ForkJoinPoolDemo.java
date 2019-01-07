@@ -1,19 +1,21 @@
-package cn.smile.j1.lang.thread;
+package cn.smile.j3.util;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveAction;
 
 /**
- * ForkJoinPool
+ * ForkJoinPool：任务拆解，可以以递归方式提交到同一个ForkJoinPool中
  */
-public class ForkJoinPool {
+public class ForkJoinPoolDemo {
     public static void main( String[] args )
     {
-        java.util.concurrent.ForkJoinPool pool = new java.util.concurrent.ForkJoinPool(1000);
+        java.util.concurrent.ForkJoinPool pool = new ForkJoinPool(1000);
 
 
         for (int i=0; i<10; i++) {
+            /** 提交1个主任务到 ForkJoinPool **/
             NotifyTask task = new NotifyTask(0, -1, null, null);
             pool.submit(task);
 
@@ -55,6 +57,7 @@ public class ForkJoinPool {
         @Override
         protected void compute() {
 
+            /** task_tp=0：主任务，会拆解成900个子任务 **/
             if (this.task_tp == 0) {
                 System.out.println("main task start!");
                 List<NotifyTask> tasks = new ArrayList<>();
@@ -63,9 +66,11 @@ public class ForkJoinPool {
                     NotifyTask t = new NotifyTask(1, i + 1, "http://avc", "liefsaf");
                     tasks.add(t);
                 }
+
                 invokeAll(tasks);
                 System.out.println("main task done!");
             } else {
+                /** 子任务：每个子任务模拟耗时1秒钟 **/
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {

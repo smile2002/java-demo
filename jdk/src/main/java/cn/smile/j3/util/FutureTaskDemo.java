@@ -1,4 +1,4 @@
-package cn.smile.j1.lang.thread;
+package cn.smile.j3.util;
 
 import java.util.ArrayList;
 import java.util.concurrent.*;
@@ -9,7 +9,7 @@ import java.util.concurrent.*;
  * 线程安全队列：BlockingQueue
  * 异步任务：FutureTask
  */
-public class FutureTask {
+public class FutureTaskDemo {
     public static void main( String[] args )
     {
         System.out.println( "Hello World!" );
@@ -55,7 +55,7 @@ public class FutureTask {
     }
 
 
-    private static class NotifyTask<Integer> extends java.util.concurrent.FutureTask<Integer> {
+    private static class NotifyTask<Integer> extends FutureTask<Integer> {
         public int id;
         public NotifyTask(int id, Callable<Integer> callable) {
             super(callable);

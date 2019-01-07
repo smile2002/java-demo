@@ -1,4 +1,4 @@
-package cn.smile.j1.lang.thread;
+package cn.smile.j1.lang;
 
 import java.lang.Thread;
 
