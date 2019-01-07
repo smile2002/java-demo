@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.smile.mapper.UserMapper">
+
+    <resultMap id="userMap" type="cn.smile.domain.User">
+        <id property="userId" column="userId"/>
+        <result property="name" column="name"/>
+        <result property="age" column="age"/>
+    </resultMap>
+
+    <select id="selectById" resultMap="userMap">
+        select userId, age, name from user where userId = #{userId}
+    </select>
+
+    <select id="selectByName" resultMap="userMap">
+        <!-- 如果接口参数列只有一个参数，将自动匹配 -->
+        select userId, age, name from user where name = #{whatever}
+    </select>
+
+    <select id="selectByNameAndAge1" resultMap="userMap">
+        <!-- 如果接口参数列是多参数，且未使用@Param注解
+             可以使用 #{0} #{1} 或 #{param1} #{param2} -->
+        select userId, age, name from user where name = #{0} and age = #{1}
+    </select>
+
+    <select id="selectByNameAndAge2" resultMap="userMap">
+        select userId, age, name from user where name = #{name} and age = #{age}
+    </select>
+
+    <select id="selectAll" resultType="cn.smile.domain.User">
+        select userId, age, name from user
+    </select>
+
+    <insert id="insert">
+        insert into user (userId, age, name) values (#{userId}, #{age}, #{name})
+    </insert>
+
+    <delete id="deleteById">
+        delete from user where userId = #{userId}
+    </delete>
+
+
+    <select id="selectByNameOrAge" resultMap="userMap">
+        select userId, age, name from user where 1=1
+        <if test="name != null and name != ''">
+          and name = #{name}
+        </if>
+        <if test="age != null">
+            and age = #{age}
+        </if>
+    </select>
+</mapper>

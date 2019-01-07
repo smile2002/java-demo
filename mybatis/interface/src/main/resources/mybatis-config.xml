@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <!-- mybatis全局设置 -->
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+        <!-- 当数据库命令规范是下划线形式 ( xxx_xxx ) 时 -->
+        <!--setting name="mapUnderscoreToCamelCase" value="true"/-->
+    </settings>
+
+    <!-- 类型别名
+           * 可以设置多个<typealias>元素
+           * 或者指定domain对象所在的package
+    -->
+    <typeAliases>
+        <package name="cn.smile.model" />
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <!-- type=”[JDBC|MANAGED] -->
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="UNPOOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/studydb"/>
+                <property name="username" value="root"/>
+                <property name="password" value="smile#2002"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- mapper
+           * 可以设置多个<mapper>元素
+           * 或者指定mapper xml文件所在的package
+    -->
+    <mappers>
+        <package name="cn.smile.mapper"/>
+    </mappers>
+
+</configuration>
