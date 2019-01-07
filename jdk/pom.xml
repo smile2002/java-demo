@@ -29,12 +29,26 @@
             <version>1.11</version>
         </dependency>
 
-        <dependency>
+        <!--dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk15on</artifactId>
             <version>1.60</version>
+        </dependency-->
+
+        <!-- PKCS8 PEMReader Relacted -->
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk16</artifactId>
+            <version>1.45</version>
         </dependency>
 
+
+        <!-- FPE Algorithm -->
+        <dependency>
+            <groupId>com.idealista</groupId>
+            <artifactId>format-preserving-encryption</artifactId>
+            <version>1.0.0</version>
+        </dependency>
 
         <dependency>
             <groupId>junit</groupId>
