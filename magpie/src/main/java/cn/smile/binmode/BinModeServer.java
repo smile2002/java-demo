@@ -13,8 +13,8 @@ public class BinModeServer
     {
         try {
             System.out.println("Hello World!");
-            BootStrap bootStrap = MagpieBootStrap.getBootStrap(new ServicePayloadListener());
             System.setProperty("magpie.config.file", "magpie-bin-svr.xml");
+            BootStrap bootStrap = MagpieBootStrap.getBootStrap(new ServicePayloadListener());
             bootStrap.start();
         } catch (Exception e) {
             e.printStackTrace();

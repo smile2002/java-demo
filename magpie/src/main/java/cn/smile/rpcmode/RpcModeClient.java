@@ -12,7 +12,7 @@ public class RpcModeClient
 {
     public static void main( String[] args )
     {
-        System.setProperty("magpie.config.file", "magpie-bin-cli.xml");
+        System.setProperty("magpie.config.file", "magpie-rpc-cli.xml");
         BootStrap bootStrap = MagpieBootStrap.getBootStrap();
         bootStrap.start();
 

@@ -13,10 +13,10 @@ public class BinModeClient
     public static void main( String[] args )
     {
         try {
-            BootStrap bootStrap = MagpieBootStrap.getBootStrap();
             System.setProperty("magpie.config.file", "magpie-bin-cli.xml");
+            BootStrap bootStrap = MagpieBootStrap.getBootStrap();
             bootStrap.start();
-            Thread.sleep(500);
+            Thread.sleep(1000);
             byte[] resultBytes = ServiceRegistry.getService("myService1").call("hello magpie".getBytes());
             System.out.println("result = " + new String(resultBytes));
         } catch (Exception e) {
